@@ -21,7 +21,7 @@ public class VentanaComponentes extends JFrame{
 	public VentanaComponentes () {
 		
 		this.setVisible(true);//hace que la venna sea visible
-		this.setSize(1000,700);//tamaño de la ventana
+		this.setSize(1000,750);//tamaño de la ventana
 		this.setTitle("Mi ventana");//pone un titulo 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//esto cierra la ventana 
 		this.setMinimumSize(new Dimension (250,250));//tamaño minimo
