@@ -9,9 +9,14 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -35,8 +40,10 @@ public class VentanaComponentes extends JFrame{
 	
 	public void iniciarComponentes() {
 		
-		login();
-		registro();
+		//this.login();
+		//this.registro();
+		this.admin();
+		
 		this.repaint();
 		this.validate();
 	}
@@ -207,4 +214,94 @@ public class VentanaComponentes extends JFrame{
 		this.add(registro);
 		
 	}
+	public void admin() {
+		
+		//añadir panel
+		
+		JPanel admin_panel = new JPanel();
+		admin_panel.setSize(this.getWidth(),this.getHeight());
+		admin_panel.setLocation(0,0);
+		admin_panel.setBackground(Color.decode("#33FF7D"));
+		admin_panel.setLayout(null);
+		
+		//añadir un menu
+		
+		JMenuBar barra = new JMenuBar();//crea la barra
+		
+		//objeto de la barra que crea un apartado
+		JMenu menu_file= new JMenu("Archivo");
+		
+		barra.add(menu_file);
+		
+		//items de la barra del apartado de archivo
+		JMenuItem open_Item = new JMenuItem("Abrir archivo...");
+		JMenuItem crear_Item = new JMenuItem("Crear archivo...");
+		
+		menu_file.add(open_Item);
+		menu_file.add(crear_Item);
+		
+		this.setJMenuBar(barra);
+		
+		//contenido de panel
+		
+		JLabel users_tag = new JLabel("Usuarios",0);
+		users_tag.setSize(300,80);
+		users_tag.setFont(new Font ("Marker Felt", Font.BOLD, 30));
+		users_tag.setForeground(Color.BLACK);
+		users_tag.setLocation(350,20);
+		users_tag.setOpaque(true);
+		users_tag.setBackground(Color.decode("#33F3FF"));
+		admin_panel.add(users_tag);
+		
+		
+		JLabel title_widget = new JLabel("Total de usuarios",0);
+		title_widget.setBounds(40, 120, 300, 40);
+		title_widget.setFont(new Font("Market Felt",Font.ITALIC,15));
+		title_widget.setForeground(Color.WHITE);
+		admin_panel.add(title_widget);
+		
+		JLabel content_widget = new JLabel("100",0);
+		content_widget.setBounds(40, 150, 300, 40);
+		content_widget.setFont(new Font("Market Felt",Font.ITALIC,20));
+		content_widget.setForeground(Color.WHITE);
+		admin_panel.add(content_widget);
+		
+		JLabel widget = new JLabel("");
+		widget.setBounds(40, 120, 300, 80);
+		widget.setOpaque(true);
+		widget.setBackground(Color.black);
+		admin_panel.add(widget);
+		
+		JButton donwload = new JButton("Exportar");
+		//donwload.setOpaque(true);
+		//donwload.setBackground(Color.black);
+		donwload.setBounds(730, 230, 100, 40);
+		admin_panel.add(donwload);
+		
+		JButton add_user = new JButton("Crear Cuenta");
+		add_user.setBounds(850, 230, 100, 40);
+		admin_panel.add(add_user);
+		
+	
+		//añafir una tabla
+		
+		String titles_tag []= {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"};
+		
+		String table_data [][]= {{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"}
+		};
+		
+		JTable table = new JTable(table_data,titles_tag);
+		//table.setBounds(40, 280, 920, 300);
+		JScrollPane table_croll = new JScrollPane(table);
+		table_croll.setBounds(40, 280, 920, 300);
+		admin_panel.add(table_croll);
+		this.add(admin_panel);
+		
+	}
 }
+	
