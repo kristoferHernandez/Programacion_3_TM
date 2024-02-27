@@ -42,12 +42,119 @@ public class VentanaComponentes extends JFrame{
 		
 		//this.login();
 		//this.registro();
-		this.admin();
+		//this.admin();
+		this.calculadora();
 		
 		this.repaint();
 		this.validate();
+		
 	}
 	
+	public void calculadora(){
+		
+		JPanel calculadora = new JPanel();
+		calculadora.setSize(this.getWidth(),this.getHeight());
+		calculadora.setBackground(Color.green);
+		calculadora.setLayout(null);
+		
+		
+		
+		JLabel pantalla = new JLabel("0",4);
+		pantalla.setBounds(310, 75, 290, 40);
+		pantalla.setOpaque(true);
+		pantalla.setBackground(Color.white);
+		calculadora.add(pantalla);
+		
+		JButton boton_MC= new JButton("MC");
+		boton_MC.setBounds(319, 155, 60, 60);
+		calculadora.add(boton_MC);
+		
+		JButton boton_M_mas= new JButton("M+");
+		boton_M_mas.setBounds(389, 155, 60, 60);
+		calculadora.add(boton_M_mas);
+		
+		JButton boton_entre= new JButton("/");
+		boton_entre.setBounds(460, 155, 60, 60);
+		calculadora.add(boton_entre);
+		
+		JButton boton_x= new JButton("x");
+		boton_x.setBounds(530, 155, 60, 60);
+		calculadora.add(boton_x);
+		
+		JButton boton_7= new JButton("7");
+		boton_7.setBounds(319, 220, 60, 60);
+		calculadora.add(boton_7);
+		
+		JButton boton_8= new JButton("8");
+		boton_8.setBounds(389, 220, 60, 60);
+		calculadora.add(boton_8);
+		
+		JButton boton_9= new JButton("9");
+		boton_9.setBounds(460, 220, 60, 60);
+		calculadora.add(boton_9);
+		
+		JButton boton_menos= new JButton("-");
+		boton_menos.setBounds(530, 220, 60, 60);
+		calculadora.add(boton_menos);
+		
+		JButton boton_4= new JButton("4");
+		boton_4.setBounds(319, 285, 60, 60);
+		calculadora.add(boton_4);
+		
+		JButton boton_5= new JButton("5");
+		boton_5.setBounds(389, 285, 60, 60);
+		calculadora.add(boton_5);
+		
+		JButton boton_6= new JButton("6");
+		boton_6.setBounds(460, 285, 60, 60);
+		calculadora.add(boton_6);
+		
+		JButton boton_mas= new JButton("-");
+		boton_mas.setBounds(530, 285, 60, 60);
+		calculadora.add(boton_mas);
+		
+		JButton boton_1= new JButton("1");
+		boton_1.setBounds(319, 355, 60, 60);
+		calculadora.add(boton_1);
+		
+		JButton boton_2= new JButton("2");
+		boton_2.setBounds(389, 355, 60, 60);
+		calculadora.add(boton_2);
+		
+		JButton boton_3= new JButton("3");
+		boton_3.setBounds(460, 355, 60, 60);
+		calculadora.add(boton_3);
+		
+		JButton boton_0= new JButton("0");
+		boton_0.setBounds(319, 420, 130, 60);
+		calculadora.add(boton_0);
+		
+		JButton boton_punto= new JButton(".");
+		boton_punto.setBounds(460, 420, 60, 60);
+		calculadora.add(boton_punto);
+		
+		JButton boton_igual= new JButton("=");
+		boton_igual.setBounds(530, 355, 60, 125);
+		calculadora.add(boton_igual);
+		
+		JLabel fondo2 = new JLabel();
+		fondo2.setBounds(310, 150, 290, 340);
+		fondo2.setOpaque(true);
+		fondo2.setBackground(Color.white);
+		calculadora.add(fondo2);
+		
+		JLabel fondo = new JLabel();
+		fondo.setBounds(300, 50, 310, 450);
+		fondo.setOpaque(true);
+		fondo.setBackground(Color.gray);
+		calculadora.add(fondo);
+		
+
+	
+		
+		
+		this.add(calculadora);
+	}
 	public void login() {
 		
 		JPanel login = new JPanel();
@@ -103,8 +210,6 @@ public class VentanaComponentes extends JFrame{
 		this.add(login);
 		
 	}
-
-
 	public void registro() {
 		
 		JPanel registro = new JPanel();
@@ -278,7 +383,7 @@ public class VentanaComponentes extends JFrame{
 		donwload.setBounds(730, 230, 100, 40);
 		admin_panel.add(donwload);
 		
-		JButton add_user = new JButton("Crear Cuenta");
+		JButton add_user = new JButton("añadir");
 		add_user.setBounds(850, 230, 100, 40);
 		admin_panel.add(add_user);
 		
@@ -288,12 +393,27 @@ public class VentanaComponentes extends JFrame{
 		String titles_tag []= {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"};
 		
 		String table_data [][]= {{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
-								{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
-								{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
-								{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
-								{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
-								{"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"}
-		};
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"},
+								 {"No. cotrol","Nombre","apellidos","Semestre","Promedio","Acciones"}};
 		
 		JTable table = new JTable(table_data,titles_tag);
 		//table.setBounds(40, 280, 920, 300);
