@@ -4,6 +4,7 @@ import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -40,10 +41,10 @@ public class VentanaComponentes extends JFrame{
 	
 	public void iniciarComponentes() {
 		
-		//this.login();
+		this.login();
 		//this.registro();
 		//this.admin();
-		this.calculadora();
+		//this.calculadora();
 		
 		this.repaint();
 		this.validate();
@@ -159,52 +160,95 @@ public class VentanaComponentes extends JFrame{
 		
 		JPanel login = new JPanel();
 		login.setSize(this.getWidth()/2,this.getHeight());
-		login.setBackground(Color.GRAY);
-		login.setLayout(null);
+		login.setBackground(Color.decode("#1A157D"));
+		login.setLayout(null);		
 		
-		JLabel login_tag = new JLabel("ACCENDER",0);
+		
+		
+		JLabel login_user_tag = new JLabel("User Login",0);
+		login_user_tag.setSize(300,80);
+		login_user_tag.setFont(new Font ("bradLey Hand", Font.BOLD, 30));
+		login_user_tag.setForeground(Color.white);
+		login_user_tag.setLocation(100,10);
+		login_user_tag.setOpaque(true);
+		login_user_tag.setBackground(Color.decode("#1A157D"));
+		login.add(login_user_tag);
+	
+		
+		JLabel logo_user = new JLabel();
+		logo_user.setIcon(new ImageIcon(getClass().getResource("user.png")));
+		logo_user.setBounds(50,153,256,256);
+		login.add(logo_user);
+		
+		JLabel logo_pass = new JLabel();
+		logo_pass.setIcon(new ImageIcon(getClass().getResource("lock.png")));
+		logo_pass.setBounds(50,230,256,256);
+		login.add(logo_pass);
+		
+		JLabel login_tag = new JLabel("My Account",0);
 		login_tag.setSize(300,80);
 		login_tag.setFont(new Font ("bradLey Hand", Font.BOLD, 30));
-		login_tag.setForeground(Color.black);
+		login_tag.setForeground(Color.yellow);
 		login_tag.setLocation(100,120);
 		login_tag.setOpaque(true);
-		login_tag.setBackground(Color.pink);
+		login_tag.setBackground(Color.decode("#08034E"));
 		login.add(login_tag);
 		
-		JLabel usr_tag=new JLabel("Nombre de Usuario: ");
+				
 		
-		usr_tag.setBounds(100, 240, 300, 40);
-		usr_tag.setFont(new Font ("bradLey Hand", Font.BOLD, 20));
+		JLabel usr_tag=new JLabel("Enter Your Username ");
+		
+		usr_tag.setBounds(100, 220, 300, 40);
+		usr_tag.setFont(new Font ("bradLey Hand", Font.BOLD, 15));
+		usr_tag.setForeground(Color.white);
 		login.add(usr_tag);
 		
 		JTextField ust_field = new JTextField();
-		ust_field.setBounds(100,290,300,40);
+		ust_field.setBounds(100,260,300,40);
 		login.add(ust_field);
 		
-		JLabel pwd_tag=new JLabel("Contraseña: ");
+		JLabel pwd_tag=new JLabel("Enter Your Password ");
 		
-		pwd_tag.setBounds(100, 330, 300, 40);
-		pwd_tag.setFont(new Font ("bradLey Hand", Font.BOLD, 20));
+		pwd_tag.setBounds(100, 300, 300, 40);
+		pwd_tag.setFont(new Font ("bradLey Hand", Font.BOLD, 15));
+		pwd_tag.setForeground(Color.white);
 		login.add(pwd_tag);
 		
 		JPasswordField pwd_field = new JPasswordField();
-		
-		pwd_field.setBounds(100, 370, 300, 40);
+		pwd_field.setBounds(100, 340, 300, 40);
 		login.add(pwd_field);
 		
-		JCheckBox casilla = new JCheckBox("Recuerdame");
+		/*JCheckBox casilla = new JCheckBox("Recuerdame");
 		casilla.setBounds(100, 440, 100, 20);
 		casilla.setBackground(Color.GRAY);
-		login.add(casilla);
+		login.add(casilla);*/
 		
-		JLabel forgot_tag =new JLabel("¿Olvido su contraseña? ");
+		JLabel forgot_tag =new JLabel("Don´t have a account?");
 		
-		forgot_tag.setBounds(260, 440, 200, 20);
+		forgot_tag.setBounds(190, 500, 200, 20);
+		forgot_tag.setForeground(Color.white);
 		login.add(forgot_tag);
 		
-		JButton login_Boton = new JButton("Accender");
-		login_Boton.setBounds(150, 500, 200, 80);
+		JButton login_Boton_registro = new JButton("Sing Up");
+		login_Boton_registro.setBounds(180, 550, 150, 50);
+		login_Boton_registro.setForeground(Color.black);
+		login_Boton_registro.setOpaque(true);
+		login_Boton_registro.setBackground(Color.decode("#E0F40A"));
+		login.add(login_Boton_registro);
+		
+		JButton login_Boton = new JButton("Login");
+		login_Boton.setBounds(180, 400, 150, 50);
+		login_Boton.setOpaque(true);
+		login_Boton.setBackground(Color.decode("#E0F40A"));
+		login_Boton.setForeground(Color.black);
 		login.add(login_Boton);
+		
+		JLabel fondo2=new JLabel("");
+		fondo2.setOpaque(true);
+		fondo2.setBackground(Color.decode("#08034E"));
+		fondo2.setBounds(30, 100, 430, 370);
+		
+		login.add(fondo2);
 		
 	
 		this.add(login);
@@ -215,7 +259,7 @@ public class VentanaComponentes extends JFrame{
 		JPanel registro = new JPanel();
 		registro.setSize(this.getWidth()/2,this.getHeight());
 		registro.setLocation(500,0);
-		registro.setBackground(Color.decode("#33FF7D"));
+		registro.setBackground(Color.decode("#090459"));
 		registro.setLayout(null);
 		
 		JLabel registro_tag = new JLabel("REGISTRO",0);
