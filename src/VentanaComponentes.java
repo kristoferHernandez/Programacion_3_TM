@@ -1,8 +1,12 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -41,16 +45,70 @@ public class VentanaComponentes extends JFrame{
 	
 	public void iniciarComponentes() {
 		
-		this.login();
+		//this.login();
 		//this.registro();
 		//this.admin();
 		//this.calculadora();
-		
+		this.calculadoraMatriz();
 		this.repaint();
 		this.validate();
 		
 	}
-	
+	public void calculadoraMatriz() {
+		
+		this.setSize(480,650);
+		JPanel panel = new JPanel();
+		panel.setSize(this.getWidth(),this.getHeight());
+		panel.setBackground(Color.decode("#AF2655"));
+		panel.setLayout(new BorderLayout());
+		
+		JLabel text = new JLabel("100.00",4);
+		text.setOpaque(true);
+		text.setFont(new Font ("Arial",Font.BOLD,40));
+		text.setBackground(Color.white);
+		panel.add(text,BorderLayout.BEFORE_FIRST_LINE);
+		
+		JPanel centro = new JPanel();
+		centro.setSize(this.getWidth(),this.getHeight());
+		centro.setBackground(Color.decode("#A3B763"));
+		centro.setLayout(new GridLayout(4,3,10,10));
+		
+		panel.add(centro,BorderLayout.CENTER);
+		
+		String btn[]= {"7","8","9","6","5","4","3","2","1","0",".","/"};
+		
+		for(int i=0;i<12;i++) {
+			JButton boton = new JButton(btn[i]);
+			centro.add(boton);
+		}
+		
+		JPanel east = new JPanel();
+		east.setBackground(Color.decode("#EC8F5E"));
+		east.setLayout(new GridLayout(3,1,10,10));
+		panel.add(east,BorderLayout.EAST);
+		
+		String btn2[] = {"+","-","="};
+		
+		for(int i = 0;i<3;i++){
+			JButton boton = new JButton(btn2[i]);
+			east.add(boton);
+		}
+		
+		JPanel west = new JPanel();
+		west.setBackground(Color.blue);
+		west.setLayout(new GridLayout(3,1,10,10));
+		panel.add(west,BorderLayout.WEST);
+		
+		String btn3[]= {"MC","M+","*"};
+		
+		for (int i=0;i<3;i++) {
+			JButton boton = new JButton(btn3[i]);
+			west.add(boton);
+		}
+		
+		this.add(panel);
+		
+	}
 	public void calculadora(){
 		
 		JPanel calculadora = new JPanel();
@@ -247,7 +305,6 @@ public class VentanaComponentes extends JFrame{
 		fondo2.setOpaque(true);
 		fondo2.setBackground(Color.decode("#08034E"));
 		fondo2.setBounds(30, 100, 430, 370);
-		
 		login.add(fondo2);
 		
 	
