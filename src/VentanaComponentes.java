@@ -2,9 +2,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Panel;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -27,12 +31,12 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class VentanaComponentes extends JFrame{
+public class VentanaComponentes extends JFrame implements MouseListener{
 	
 	public VentanaComponentes () {
 		
 		this.setVisible(true);//hace que la venna sea visible
-		this.setSize(1000,850);//tamaño de la ventana
+		this.setSize(1100,650);//tamaño de la ventana
 		this.setTitle("Mi ventana");//pone un titulo 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//esto cierra la ventana 
 		//this.setMinimumSize(new Dimension (250,250));//tamaño minimo
@@ -42,6 +46,7 @@ public class VentanaComponentes extends JFrame{
 		this.setLocationRelativeTo(null);//centrar pantalla
 			
 		iniciarComponentes();//ayuda a agregar el JPanel
+		this.addMouseListener(this);
 	}
 	
 	public void iniciarComponentes() {
@@ -51,12 +56,115 @@ public class VentanaComponentes extends JFrame{
 		//this.admin();
 		//this.calculadora();
 		//this.calculadoraMatriz();
+		//this.calcular_Interez();
 		
-		this.calcular_Interez();
+		this.paint(getGraphics());
 		this.repaint();
 		this.validate();
 		
 	}
+	public void paint(Graphics g) {
+		
+		super.paint(g);
+		
+		Graphics2D mario = (Graphics2D)g;
+		
+		mario.setColor(Color.decode("#60DCE0"));
+		mario.fillRect(0, 0, 1100, 800); // cielo
+		
+		mario.setColor(Color.decode("#040404"));
+		mario.fillRect(60, 280, 80, 80); // cajita
+		
+		mario.setColor(Color.decode("#040404"));
+		mario.fillRect(840, 140, 80, 80); // cajita
+		
+		mario.setColor(Color.decode("#ff8f5f"));
+		mario.fillRect(843, 142, 75, 75); // cajita color
+		
+		mario.setColor(Color.black);
+		mario.drawRoundRect(850, 150,3,3,100,100); 
+		mario.drawRoundRect(910, 150,3,3,100,100);
+		mario.drawRoundRect(850, 210,3,3,100,100);
+		mario.drawRoundRect(910, 210,3,3,100,100);
+		
+		mario.setColor(Color.decode("#ff8f5f"));
+		mario.fillRect(63, 283, 75, 75); // cajita color 
+		
+		mario.setColor(Color.black);
+		mario.drawRoundRect(68, 289,3,3,100,100); 
+		mario.drawRoundRect(130, 289,3,3,100,100);
+		mario.drawRoundRect(68, 351,3,3,100,100);
+		mario.drawRoundRect(130, 351,3,3,100,100);
+		
+		mario.setColor(Color.decode("#040404"));
+		mario.fillRect(198, 150, 160, 80); // cajita
+		
+		mario.setColor(Color.decode("#ff8f5f"));
+		mario.fillRect(200, 153, 75, 75); // cajita color 
+		
+		mario.setColor(Color.decode("#ff8f5f"));
+		mario.fillRect(280 , 153, 75, 75); // cajita color 
+		
+		mario.setColor(Color.black);
+		mario.drawRoundRect(205, 160,3,3,100,100);
+		mario.drawRoundRect(265, 160,3,3,100,100);
+		mario.drawRoundRect(205, 215,3,3,100,100);
+		mario.drawRoundRect(265, 215,3,3,100,100);
+		
+		mario.setColor(Color.black);
+		mario.drawRoundRect(285, 160,3,3,100,100); 
+		mario.drawRoundRect(345, 160,3,3,100,100);
+		mario.drawRoundRect(285, 215,3,3,100,100);
+		mario.drawRoundRect(345, 215,3,3,100,100);
+		
+		mario.setColor(Color.decode("#040404"));
+		mario.fillRect(370, 250, 200, 500); // fondo caja azul
+		
+		mario.setColor(Color.decode("#040404"));
+		mario.fillRect(380, 300, 215, 500); // fondo caja azul
+		
+		mario.setColor(Color.decode("#3F95F0"));
+		mario.fillRect(375, 255, 190, 290); // cielo
+		
+		mario.setColor(Color.decode("#040404"));
+		mario.fillRect(250, 350, 200, 500); //fondo caja rosa
+		
+		mario.setColor(Color.decode("#040404"));
+		mario.fillRect(250, 400, 215, 500); //fondo caja rosa
+		
+		mario.setColor(Color.decode("#FF9A90"));
+		mario.fillRect(255, 355, 190, 190); // cielo
+		
+		
+		mario.setColor(Color.decode("#040404"));
+		mario.fillRect(900, 350, 200, 500); //fondo caja verde
+		
+		mario.setColor(Color.decode("#72E24C"));
+		mario.fillRect(905, 355, 200, 190); //fondo caja verde
+		
+		mario.setColor(Color.decode("#040404"));
+		mario.fillRect(680, 410, 120, 150); //fondo tubo
+		
+		mario.setColor(Color.decode("#197A10"));
+		mario.fillRect(685, 415, 110, 130); //color tubo
+		
+		mario.setColor(Color.decode("#040404"));
+		mario.fillRect(655, 350, 170, 80);
+		
+		mario.setColor(Color.decode("#197A10"));
+		mario.fillRect(660, 355, 160, 70);
+		
+		mario.setColor(Color.decode("#FF9A90"));
+		mario.fillRect(0, 550, 1100, 800); // cielo
+		
+		mario.setColor(Color.decode("#DC7633"));
+		mario.fillRect(0, 576, 1100, 800); // cielo
+		
+
+	}
+
+	
+
 	public void calculadoraMatriz() {
 		
 		this.setSize(480,650);
@@ -709,6 +817,38 @@ public class VentanaComponentes extends JFrame{
 		
 		
 		this.add(panel_principal);
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println(e.getX());
+		System.out.println(e.getY());
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 }
