@@ -36,7 +36,7 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 	public VentanaComponentes () {
 		
 		this.setVisible(true);//hace que la venna sea visible
-		this.setSize(1100,650);//tamaño de la ventana
+		this.setSize(1050,650);//tamaño de la ventana
 		this.setTitle("Mi ventana");//pone un titulo 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//esto cierra la ventana 
 		//this.setMinimumSize(new Dimension (250,250));//tamaño minimo
@@ -67,7 +67,378 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 		
 		super.paint(g);
 		
-		Graphics2D mario = (Graphics2D)g;
+		Graphics2D mario2 = (Graphics2D)g;
+		
+		
+		
+		mario2.setColor(Color.decode("#2A3ACC"));
+		mario2.fillRect(0, 0, 1100, 650); // cielo
+		
+		
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(15, 115, 190, 150);
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(15, 200, 190, 400); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(430, 115, 190, 150);
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(430, 200, 190, 400); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(618, 62, 190, 150);
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(618, 140, 190, 400); // pisoVerde
+		//FONFOD PILARES
+		
+		mario2.setColor(Color.decode("#B0CDDC"));
+		mario2.fillOval(15, 115, 170, 150);
+		
+		mario2.setColor(Color.decode("#B0CDDC"));
+		mario2.fillRect(15, 200, 170, 400); // pisoVerde
+		
+		mario2.setColor(Color.decode("#B0CDDC"));
+		mario2.fillOval(430, 115, 170, 150);
+		
+		
+		mario2.setColor(Color.decode("#B0CDDC"));
+		mario2.fillRect(430, 200, 170, 400); // pisoVerde
+		
+		mario2.setColor(Color.decode("#B0CDDC"));
+		mario2.fillOval(618, 62, 170, 150);
+		
+		mario2.setColor(Color.decode("#B0CDDC"));
+		mario2.fillRect(618, 140, 170, 400); // pisoVerde
+		
+		//COLOR PILARES
+
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(60, 220, 90, 50); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(0, 220, 100, 50); // pisoSombra
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillOval(60, 220, 90, 45); // pisoVerde
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(0, 220, 100, 45); // pisoSombra
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(208, 270, 90, 50); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(411, 270, 90, 50); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(252, 270, 200, 50); // pisoSombra
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillOval(208, 270, 90, 45); // pisoVerde
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillOval(411, 270, 90, 45); // pisoVerde
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(252, 270, 200, 45); // pisoSombra
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(320, 471, 90, 50); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(370, 471, 60, 50); // pisoSombra
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillOval(320, 471, 90, 45); // pisoVerde
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(370, 471, 60, 45); // pisoSombra
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(335, 421, 90, 50); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(205, 421, 180, 50); // pisoSombra
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillOval(335, 421, 90, 45); // pisoVerde
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(205, 421, 180, 45); // pisoSombra
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(280, 371, 90, 50); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(331, 371, 100, 50); // pisoSombra
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillOval(280, 371, 90, 45); // pisoVerde
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(331, 371, 100, 45); // pisoSombra
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(546, 325, 90, 50); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(585, 325, 100, 50); // pisoSombra
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillOval(546, 325, 90, 45); // pisoVerde
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(585, 325, 100, 45); // pisoSombra
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(840, 182, 90, 50); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(808, 182, 80, 50); // pisoSombra
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillOval(840, 182, 90, 45); // pisoVerde
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(808, 182, 80, 45); // pisoSombra
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(811, 135, 90, 50); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillOval(927, 135, 90, 50); // pisoVerde
+		
+		mario2.setColor(Color.decode("#85A6B8"));
+		mario2.fillRect(857, 135, 120, 50); // pisoSombra
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillOval(811, 135, 90, 45); // pisoVerde
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillOval(927, 135, 90, 45); // pisoVerde
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(857, 135, 120, 45); // pisoSombra
+		
+		//nubes
+
+		mario2.setColor(Color.decode("#262B61"));
+		mario2.fillOval(0, 390, 170, 250);
+	
+		mario2.setColor(Color.decode("#262B61"));
+		mario2.fillRect(0, 390, 75, 90); // pisoSombra
+		
+		mario2.setColor(Color.decode("#262B61"));
+		mario2.fillOval(430, 376,250, 150);
+		
+		mario2.setColor(Color.decode("#262B61"));
+		mario2.fillRect(430, 450, 250, 90); // pisoSombr
+		
+		mario2.setColor(Color.decode("#262B61"));
+		mario2.fillOval(680, 223, 250, 185); // pisoSombr
+		
+		mario2.setColor(Color.decode("#262B61"));
+		mario2.fillRect(680, 325, 250, 195); // pisoSombr
+		
+		
+		//segundo fondo pilares 
+		
+		
+		
+
+		
+		mario2.setColor(Color.decode("#6990C4"));
+		mario2.fillOval(0, 400, 150, 250);
+		
+		mario2.setColor(Color.decode("#6990C4"));
+		mario2.fillRect(0, 400, 75, 90); // pisoSombra
+		
+		mario2.setColor(Color.decode("#6990C4"));
+		mario2.fillOval(433, 379,230, 150);
+		
+		mario2.setColor(Color.decode("#6990C4"));
+		mario2.fillRect(433, 453, 230, 90); // pisoSombr
+		
+		mario2.setColor(Color.decode("#6990C4"));
+		mario2.fillOval(683, 228, 230, 185); // pisoSombr
+		
+		mario2.setColor(Color.decode("#6990C4"));
+		mario2.fillRect(683, 332, 230, 195); // pisoSombr
+		
+		mario2.setColor(Color.decode("#6990C4"));
+		mario2.fillOval(1025, 330, 230, 185); // pisoSombr
+		
+		//seguudo color pilares
+			
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(524, 376, 120, 50); // pisoSombr
+		
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(530, 425, 107, 100); // pisoSombr
+		
+		
+		//tubo 1 fodo negro 
+		
+		mario2.setColor(Color.decode("#7A2EE0"));
+		mario2.fillRect(527, 379, 113, 43); // pisoSombr
+		
+		mario2.setColor(Color.decode("#7A2EE0"));
+		mario2.fillRect(532, 428, 100, 93); // pisoSombr
+		
+		//tubo color 1
+		
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(553, 379, 10, 43); // pisoSombr
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(561, 428, 10, 93); // pisoSombr
+		//raya tubo 1 
+		
+		
+				
+		mario2.setColor(Color.white);
+		mario2.fillOval(138, 179, 25, 45); // pisoVerde
+		
+		
+		mario2.setColor(Color.white);
+		mario2.fillOval(138, 270, 25, 45); // pisoVerde
+		
+
+		mario2.setColor(Color.white);
+		mario2.fillOval(50, 340, 25, 45); // pisoVerde
+		
+		mario2.setColor(Color.white);
+		mario2.fillOval(478, 325, 25, 45); // pisoVerde
+		
+		mario2.setColor(Color.white);
+		mario2.fillOval(478, 216, 25, 45); // pisoVerde
+		
+		mario2.setColor(Color.white);
+		mario2.fillOval(547, 182, 25, 45); // pisoVerde
+		
+		mario2.setColor(Color.white);
+		mario2.fillOval(661, 182, 25, 45); // pisoVerde
+		
+		mario2.setColor(Color.white);
+		mario2.fillOval(740, 107, 25, 45); // pisoVerde
+		
+		mario2.setColor(Color.white);
+		mario2.fillOval(736, 288, 25, 45); // pisoVerde
+		
+		mario2.setColor(Color.white);
+		mario2.fillOval(837, 378, 25, 45); // pisoVerde
+		
+		mario2.setColor(Color.white);
+		mario2.fillOval(813, 440, 200, 150); // pisoSombr
+		
+		//PUNTOS bLANCOS
+		
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(886, 328, 60, 200); // piso
+		
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(886, 328, 200, 50); // piso
+		
+		mario2.setColor(Color.gray);
+		mario2.fillRect(890, 330, 52, 45); // piso
+		
+		mario2.setColor(Color.decode("#CECDC4"));
+		mario2.fillRect(890, 330, 50, 40); // piso
+		
+		mario2.setColor(Color.gray);
+		mario2.fillRect(890, 378, 52, 45); // piso
+		
+		mario2.setColor(Color.decode("#CECDC4"));
+		mario2.fillRect(890, 378, 50, 40); // piso
+		
+		mario2.setColor(Color.gray);
+		mario2.fillRect(890, 426, 52, 45); // piso
+		
+		mario2.setColor(Color.decode("#CECDC4"));
+		mario2.fillRect(890, 426, 50, 40); // piso
+		
+		mario2.setColor(Color.gray);
+		mario2.fillRect(890, 474, 52, 45); // piso
+		
+		mario2.setColor(Color.decode("#CECDC4"));
+		mario2.fillRect(890, 474, 50, 40); // piso
+		
+		mario2.setColor(Color.decode("#9D8E0F"));
+		mario2.fillRect(945, 330, 52, 45); // piso
+		
+		mario2.setColor(Color.decode("#F7DF05"));
+		mario2.fillRect(945, 330, 50, 40); // piso
+		
+		mario2.setColor(Color.decode("#9D8E0F"));
+		mario2.fillRect(1000, 330, 52, 45); // piso
+		
+		mario2.setColor(Color.decode("#F7DF05"));
+		mario2.fillRect(1000, 330, 50, 40); // piso
+		
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(956, 337, 5, 15); // piso
+		
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(981, 337, 5, 15); // piso
+		
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(1007, 337, 5, 15); // piso
+		
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(1033, 337, 5, 15); // piso
+		
+		//cuadrados 
+		
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(946, 424, 120, 50); // pisoSombr
+		
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(951, 474, 107, 100); // pisoSombr
+		
+		//tubo dos fondo
+		
+		mario2.setColor(Color.decode("#7A2EE0"));
+		mario2.fillRect(949, 427, 113, 43); // pisoSombr
+		
+		mario2.setColor(Color.decode("#7A2EE0"));
+		mario2.fillRect(954, 477, 100, 93); // pisoSombr
+		
+		
+		//tubo dos colores
+		
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(970, 427, 10, 43); // pisoSombr
+		
+		mario2.setColor(Color.decode("#FFFFFF"));
+		mario2.fillRect(977, 477, 10, 93); // pisoSombr
+		
+		//linas tubo dos
+		
+		
+		mario2.setColor(Color.decode("#000000"));
+		mario2.fillRect(0, 520, 1100, 20); // pisoSombra
+		
+		mario2.setColor(Color.decode("#078B20"));
+		mario2.fillRect(0, 522, 1100, 16); // pisoVerde
+		
+		mario2.setColor(Color.decode("#DC7633"));
+		mario2.fillRect(0, 540, 1100, 800); // piso
+		
+		mario2.setColor(Color.decode("#502802"));
+		mario2.fillRect(0, 540, 1100, 10); // pisoSombra
+		
+		
+		
+		
+		
+		/*Graphics2D mario = (Graphics2D)g;
 		
 		mario.setColor(Color.decode("#60DCE0"));
 		mario.fillRect(0, 0, 1100, 800); // cielo
@@ -159,8 +530,8 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 		
 		mario.setColor(Color.decode("#DC7633"));
 		mario.fillRect(0, 576, 1100, 800); // cielo
+		*/
 		
-
 	}
 
 	
