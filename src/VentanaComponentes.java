@@ -7,6 +7,8 @@ import java.awt.Graphics2D;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -31,12 +33,12 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class VentanaComponentes extends JFrame implements MouseListener{
+public class VentanaComponentes extends JFrame{
 	
 	public VentanaComponentes () {
 		
 		this.setVisible(true);//hace que la venna sea visible
-		this.setSize(1050,650);//tamaño de la ventana
+		this.setSize(1000,750);//tamaño de la ventana
 		this.setTitle("Mi ventana");//pone un titulo 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//esto cierra la ventana 
 		//this.setMinimumSize(new Dimension (250,250));//tamaño minimo
@@ -46,26 +48,27 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 		this.setLocationRelativeTo(null);//centrar pantalla
 			
 		iniciarComponentes();//ayuda a agregar el JPanel
-		this.addMouseListener(this);
+		
 	}
 	
 	public void iniciarComponentes() {
 		
-		//this.login();
-		//this.registro();
+		this.login();
+		this.registro();
 		//this.admin();
 		//this.calculadora();
 		//this.calculadoraMatriz();
 		//this.calcular_Interez();
 		
-		this.paint(getGraphics());
+		//this.paint(getGraphics());
 		this.repaint();
 		this.validate();
 		
 	}
-	public void paint(Graphics g) {
+	
+	/*public void paint(Graphics g) {
 		
-		super.paint(g);
+		//super.paint(g);
 		
 		Graphics2D mario2 = (Graphics2D)g;
 		
@@ -532,10 +535,8 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 		mario.fillRect(0, 576, 1100, 800); // cielo
 		*/
 		
-	}
-
+	//}
 	
-
 	public void calculadoraMatriz() {
 		
 		this.setSize(480,650);
@@ -774,12 +775,54 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 		login_Boton_registro.setBackground(Color.decode("#E0F40A"));
 		login.add(login_Boton_registro);
 		
+		
+		
 		JButton login_Boton = new JButton("Login");
 		login_Boton.setBounds(180, 400, 150, 50);
 		login_Boton.setOpaque(true);
 		login_Boton.setBackground(Color.decode("#E0F40A"));
 		login_Boton.setForeground(Color.black);
+		//hace que ek boton tenga una accion 
+		login_Boton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				String usr=ust_field.getText();
+				String pwd=new String (pwd_field.getPassword());
+				
+				if (usr.length()<=0) {
+					ust_field.setBorder(BorderFactory.createLineBorder(Color.red,4));
+				}
+				else {
+					ust_field.setBorder(BorderFactory.createLineBorder(Color.GREEN,4));
+				}
+				
+				if (pwd.length()<=0) {
+					pwd_field.setBorder(BorderFactory.createLineBorder(Color.red,4));
+				}
+				else {
+					pwd_field.setBorder(BorderFactory.createLineBorder(Color.GREEN,4));
+				}
+			
+				if (usr.equals("SuperUser")) {
+					
+					if(pwd.equals("SuperPass")) {
+						System.out.println("Bienvenido");
+					}
+					
+				}else {
+					System.out.println("Usuario no valido");
+				}
+				
+				
+			}});
+		
+		
 		login.add(login_Boton);
+		
+		
 		
 		JLabel fondo2=new JLabel("");
 		fondo2.setOpaque(true);
@@ -797,7 +840,7 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 		JPanel registro = new JPanel();
 		registro.setSize(this.getWidth()/2,this.getHeight());
 		registro.setLocation(500,0);
-		registro.setBackground(Color.decode("#090459"));
+		registro.setBackground(Color.decode("#33FF7D"));
 		registro.setLayout(null);
 		
 		JLabel registro_tag = new JLabel("REGISTRO",0);
@@ -896,6 +939,45 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 		JButton registro_Boton = new JButton("Crear Cuenta");
 		registro_Boton.setBounds(150, 550, 200, 80);
 		registro.add(registro_Boton);
+		
+		registro_Boton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				String usr= usr_field.getText();
+				String bio= bio_tex.getText();
+			
+				
+				//accept_radio
+				
+				if(usr.length()<=0) {
+					usr_field.setBorder(BorderFactory.createLineBorder(Color.red,4));
+				}
+				else {
+					usr_field.setBorder(BorderFactory.createLineBorder(Color.green,4));
+				}
+				if(bio.length()<=0) {
+					bio_tex.setBorder(BorderFactory.createLineBorder(Color.red,4));
+				}
+				else {
+					bio_tex.setBorder(BorderFactory.createLineBorder(Color.green,4));
+				}
+				
+				if(!accept_radio.isSelected()){
+					accept_radio.setBorderPainted(true);
+					accept_radio.setBorder(BorderFactory.createLineBorder(Color.red,4));
+					
+					den_radio.setBorderPainted(true);
+					den_radio.setBorder(BorderFactory.createLineBorder(Color.red,4));
+				}
+				else {
+					accept_radio.setBorderPainted(true);
+					accept_radio.setBorder(BorderFactory.createLineBorder(Color.green,4));
+					
+				}
+			}
+		});
 		
 		
 		this.add(registro);
@@ -1191,36 +1273,5 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 		
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		System.out.println(e.getX());
-		System.out.println(e.getY());
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 }
 	
