@@ -25,6 +25,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
@@ -35,6 +36,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class VentanaComponentes extends JFrame{
+	JPanel btn_panel;
 	
 	public VentanaComponentes () {
 		
@@ -1279,8 +1281,8 @@ public class VentanaComponentes extends JFrame{
 		
 		this.setSize(500,750);
 		
-		//panel principal dividido en un borderLayout
-		JPanel btn_panel = new JPanel();
+		//pane
+		btn_panel = new JPanel();
 		btn_panel.setSize(this.getWidth(),this.getHeight());
 		btn_panel.setLocation(0,0);
 		btn_panel.setBackground(Color.decode("#E0F40A"));
@@ -1309,11 +1311,22 @@ public class VentanaComponentes extends JFrame{
 				float g= rand.nextFloat();
 				float b= rand.nextFloat();
 				
-				JButton otro_botn = new JButton("Sing Up");
+				JButton otro_botn = new JButton(r+","+g+","+b);
 				otro_botn.setBounds(x, y, w, h);
 				otro_botn.setOpaque(true);
 				otro_botn.setBackground(new Color (r,g,b));
 				btn_panel.add(otro_botn);
+				
+				otro_botn.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						JOptionPane.showMessageDialog(null,r+","+g+","+b,"color",JOptionPane.CANCEL_OPTION);
+						
+						
+					}
+				});
 				
 				getContentPane().repaint();
 				getContentPane().validate();
