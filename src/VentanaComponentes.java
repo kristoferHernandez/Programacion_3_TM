@@ -35,7 +35,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class VentanaComponentes extends JFrame{
+public class VentanaComponentes extends JFrame implements MouseListener{
 	JPanel btn_panel;
 	
 	public VentanaComponentes () {
@@ -49,6 +49,8 @@ public class VentanaComponentes extends JFrame{
 		this.setLocation(200,200);//es la localidad de la ventana 
 		this.setLayout(null);
 		this.setLocationRelativeTo(null);//centrar pantalla
+		
+		this.addMouseListener(this);
 			
 		iniciarComponentes();//ayuda a agregar el JPanel
 		
@@ -1306,7 +1308,7 @@ public class VentanaComponentes extends JFrame{
 				int w=(int)Math.floor(Math.random()*120+1);
 				int h=(int)Math.floor(Math.random()*120+1);
 				
-				Random rand = new Random();
+				Random rand = new Random(); 
 				float r= rand.nextFloat();
 				float g= rand.nextFloat();
 				float b= rand.nextFloat();
@@ -1317,16 +1319,19 @@ public class VentanaComponentes extends JFrame{
 				otro_botn.setBackground(new Color (r,g,b));
 				btn_panel.add(otro_botn);
 				
+				
 				otro_botn.addActionListener(new ActionListener() {
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						// TODO Auto-generated method stub
-						JOptionPane.showMessageDialog(null,r+","+g+","+b,"color",JOptionPane.CANCEL_OPTION);
+						String codigoColor = ((JButton) e.getSource()).getText();
+						JOptionPane.showMessageDialog(null,codigoColor,"color",JOptionPane.CANCEL_OPTION);
 						
 						
 					}
 				});
+				
+			
 				
 				getContentPane().repaint();
 				getContentPane().validate();
@@ -1335,6 +1340,64 @@ public class VentanaComponentes extends JFrame{
 		});
 		
 		this.add(btn_panel);
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+		int w=(int)Math.floor(Math.random()*120+1);
+		int h=(int)Math.floor(Math.random()*120+1);
+		
+		Random rand = new Random();
+		float r= rand.nextFloat();
+		float g= rand.nextFloat();
+		float b= rand.nextFloat();
+		
+		JButton otro_botn = new JButton(r+","+g+","+b);
+		otro_botn.setBounds(e.getX()-8, e.getY()-32, w, h);
+		otro_botn.setOpaque(true);
+		otro_botn.setBackground(new Color (r,g,b));
+		btn_panel.add(otro_botn);
+		
+		otro_botn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String codigoColor = ((JButton) e.getSource()).getText();
+				JOptionPane.showMessageDialog(null,codigoColor,"color",JOptionPane.CANCEL_OPTION);
+				
+				
+			}
+		});
+		
+		this.repaint();
+		this.validate();
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 	
