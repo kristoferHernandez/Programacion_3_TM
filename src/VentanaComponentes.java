@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Random;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -53,12 +54,13 @@ public class VentanaComponentes extends JFrame{
 	
 	public void iniciarComponentes() {
 		
-		this.login();
-		this.registro();
+		//this.login();
+		//this.registro();
 		//this.admin();
 		//this.calculadora();
 		//this.calculadoraMatriz();
 		//this.calcular_Interez();
+		this.botones();
 		
 		//this.paint(getGraphics());
 		this.repaint();
@@ -1273,5 +1275,53 @@ public class VentanaComponentes extends JFrame{
 		
 	}
 
+	public void botones() {
+		
+		this.setSize(500,750);
+		
+		//panel principal dividido en un borderLayout
+		JPanel btn_panel = new JPanel();
+		btn_panel.setSize(this.getWidth(),this.getHeight());
+		btn_panel.setLocation(0,0);
+		btn_panel.setBackground(Color.decode("#E0F40A"));
+		btn_panel.setLayout(null);
+		
+		JButton Super_boton = new JButton("Sing Up");
+		Super_boton.setBounds(180, 550, 150, 50);
+		Super_boton.setForeground(Color.black);
+		Super_boton.setOpaque(true);
+		Super_boton.setBackground(Color.decode("#FFFFFF"));
+		btn_panel.add(Super_boton);
+		
+		Super_boton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				int x=(int)Math.floor(Math.random()*450+1);
+				int y=(int)Math.floor(Math.random()*650+1);
+				
+				int w=(int)Math.floor(Math.random()*120+1);
+				int h=(int)Math.floor(Math.random()*120+1);
+				
+				Random rand = new Random();
+				float r= rand.nextFloat();
+				float g= rand.nextFloat();
+				float b= rand.nextFloat();
+				
+				JButton otro_botn = new JButton("Sing Up");
+				otro_botn.setBounds(x, y, w, h);
+				otro_botn.setOpaque(true);
+				otro_botn.setBackground(new Color (r,g,b));
+				btn_panel.add(otro_botn);
+				
+				getContentPane().repaint();
+				getContentPane().validate();
+				
+			}
+		});
+		
+		this.add(btn_panel);
+	}
 }
 	
