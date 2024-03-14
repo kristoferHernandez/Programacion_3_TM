@@ -1324,8 +1324,13 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						String codigoColor = ((JButton) e.getSource()).getText();
-						JOptionPane.showMessageDialog(null,codigoColor,"color",JOptionPane.CANCEL_OPTION);
+						JButton yo = ((JButton)e.getSource());
+						String codigo = ((JButton) e.getSource()).getText();
+						
+						btn_panel.remove(yo);
+						
+						getContentPane().repaint();
+						getContentPane().revalidate();
 						
 						
 					}
@@ -1371,8 +1376,18 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				String codigoColor = ((JButton) e.getSource()).getText();
-				JOptionPane.showMessageDialog(null,codigoColor,"color",JOptionPane.CANCEL_OPTION);
+				//este boton es para eliminar cuando lo precionan 
+				
+				JButton yo = ((JButton)e.getSource());
+				String codigo = ((JButton) e.getSource()).getText();
+				
+				btn_panel.remove(yo);
+				
+				getContentPane().repaint();
+				getContentPane().revalidate();
+				//este boton es para pintar una ventana emergente y color
+				//String codigoColor = ((JButton) e.getSource()).getText();
+				//JOptionPane.showMessageDialog(null,codigoColor,"color",JOptionPane.CANCEL_OPTION);
 				
 				
 			}
@@ -1391,6 +1406,12 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
+		Random obj = new Random();
+		int rand_num= obj.nextInt(0xffffff+1);
+		String color_code=String.format("#%06x",rand_num);
+		
+		btn_panel.setBackground(Color.decode(color_code));
 		
 	}
 
