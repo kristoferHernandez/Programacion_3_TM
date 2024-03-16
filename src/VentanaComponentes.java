@@ -9,6 +9,8 @@ import java.awt.GridLayout;
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Random;
@@ -35,7 +37,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class VentanaComponentes extends JFrame implements MouseListener{
+public class VentanaComponentes extends JFrame implements MouseListener,KeyListener{
 	JPanel btn_panel;
 	
 	public VentanaComponentes () {
@@ -50,6 +52,7 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 		this.setLayout(null);
 		this.setLocationRelativeTo(null);//centrar pantalla
 		
+		this.addKeyListener(this);
 		this.addMouseListener(this);
 			
 		iniciarComponentes();//ayuda a agregar el JPanel
@@ -1417,6 +1420,34 @@ public class VentanaComponentes extends JFrame implements MouseListener{
 
 	@Override
 	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println(e.getKeyCode()+" "+e.getKeyChar());
+		
+		if (e.getKeyCode()== 8|| e.getKeyCode()==127) {
+			btn_panel.removeAll();
+			getContentPane().repaint();
+			getContentPane().revalidate();
+			
+		}
+		
+
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
