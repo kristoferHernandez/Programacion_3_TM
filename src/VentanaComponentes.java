@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -1369,7 +1370,7 @@ public class VentanaComponentes extends JFrame implements MouseListener,KeyListe
 		float b= rand.nextFloat();
 		
 		JButton otro_botn = new JButton(r+","+g+","+b);
-		otro_botn.setBounds(e.getX()-8, e.getY()-32, w, h);
+		otro_botn.setBounds(e.getX(), e.getY(), w, h);
 		otro_botn.setOpaque(true);
 		otro_botn.setBackground(new Color (r,g,b));
 		btn_panel.add(otro_botn);
@@ -1442,7 +1443,20 @@ public class VentanaComponentes extends JFrame implements MouseListener,KeyListe
 			
 		}
 		
-
+		if(e.getKeyCode()==87)
+		{
+			Component[] elementos = btn_panel.getComponents();
+			for (int i =0;i<elementos.length;i++)
+			{
+				if(elementos[i].getClass().toString().equals("class javax.swing.JButton")) 
+				{
+					JButton btn=((JButton)elementos[i]);
+					btn.setSize(btn.getHeight()+13,btn.getWidth()+10);
+					getContentPane().repaint();
+					getContentPane().revalidate();
+				}	
+			}
+		}
 		
 	}
 
