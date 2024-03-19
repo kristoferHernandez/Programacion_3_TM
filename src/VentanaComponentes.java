@@ -1458,6 +1458,69 @@ public class VentanaComponentes extends JFrame implements MouseListener,KeyListe
 			}
 		}
 		
+		switch (e.getKeyCode()) {
+		case 38: 
+			
+			
+			Component[] elementos = btn_panel.getComponents();
+			for (int i =0;i<elementos.length;i++)
+			{
+				if(elementos[i].getClass().toString().equals("class javax.swing.JButton")) 
+				{
+					JButton btn=((JButton)elementos[i]);
+					btn.setLocation(btn.getX(),btn.getY()-10);
+					getContentPane().repaint();
+					getContentPane().revalidate();
+				}	
+			}
+		break;
+		
+		case 39:
+			
+			Component[] elementos1 = btn_panel.getComponents();
+			for (int i =0;i<elementos1.length;i++)
+			{
+				if(elementos1[i].getClass().toString().equals("class javax.swing.JButton")) 
+				{
+					JButton btn=((JButton)elementos1[i]);
+					btn.setLocation(btn.getX()+13,btn.getY());
+					getContentPane().repaint();
+					getContentPane().revalidate();
+				}	
+			}
+		break;
+		
+		case 40: 
+			Component[] elementos2 = btn_panel.getComponents();
+			for (int i =0;i<elementos2.length;i++)
+			{
+				if(elementos2[i].getClass().toString().equals("class javax.swing.JButton")) 
+				{
+					JButton btn=((JButton)elementos2[i]);
+					btn.setLocation(btn.getX(),btn.getY()+10);
+					getContentPane().repaint();
+					getContentPane().revalidate();
+				}	
+			}
+		break;
+		
+		case 37: 
+		
+			
+			Component[] elementos3 = btn_panel.getComponents();
+			for (int i =0;i<elementos3.length;i++)
+			{
+				if(elementos3[i].getClass().toString().equals("class javax.swing.JButton")) 
+				{
+					JButton btn=((JButton)elementos3[i]);
+					btn.setLocation(btn.getX()-13,btn.getY());
+					getContentPane().repaint();
+					getContentPane().revalidate();
+				}	
+			}
+		break;
+		}
+		
 	}
 
 	@Override
